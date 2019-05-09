@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Services</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<!-- css files -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link href="css/main.css" rel="stylesheet">	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font-Awesome-Icons-CSS -->
+</head>
+<body>
+	<!-- Header -->
+	<div class="container">
+		<div class="row">
+			<div class="topnav" id="myTopnav">
+				<a href="home.html">
+					<img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Sapient_Logo.svg/1280px-Sapient_Logo.svg.png">
+				</a>
+				<a class="ml100" href="#news">AboutUs</a>
+				<a href="#contact">Contact</a>
+				<a href="#news">News</a>
+				<a href="#contact">Blog</a>
+				<a href="#about">FAQs</a>
+				<div  style="flex-grow: 1" class="search-container">
+					<form>
+						<input type="text" placeholder="Search.." name="search">
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					<i class="fa fa-bars"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		function myFunction() {
+			var x = document.getElementById("myTopnav");
+			if (x.className === "topnav") {
+				x.className += " responsive";
+			} else {
+				x.className = "topnav";
+			}
+		}
+	</script>
+	<!-- //Header -->
+
+	<!-- Content Section -->
+	<div class="container">	
+		<div class="row  mt20" id="app">
+			<script type="text/javascript">
+				const mydata = [
+				{
+					name: "Test and Integration Engineer",
+					pahara: ["The client is into engaging and entertaining its customers with live stream events, upload highlights and curate content in a customized video platform. They also engage fans across the world via their favorite devices, anywhere at any time.", "As a part of the Sanctum Networks development team, you will majorly participate and contribute to the programming and debugging aspects of the product cycle."],
+					photo: "http://placehold.it/500x200.jpg"
+				},
+				{
+					name: "Senior/Intermediate Software Engineer",
+					pahara: ["The client is into engaging and entertaining its customers with live stream events, upload highlights and curate content in a customized video platform. They also engage fans across the world via their favorite devices, anywhere at any time.", "As a part of the Sanctum Networks development team, you will majorly participate and contribute to the programming and debugging aspects of the product cycle."],
+					photo: "http://placehold.it/500x200.jpg"
+				},
+				{
+					name: "Software Developer",
+					pahara: ["The client is into engaging and entertaining its customers with live stream events, upload highlights and curate content in a customized video platform. They also engage fans across the world via their favorite devices, anywhere at any time.", "As a part of the Sanctum Networks development team, you will majorly participate and contribute to the programming and debugging aspects of the product cycle."],
+					photo: "http://placehold.it/500x200.jpg"
+				}
+				];
+
+				function foods(foods) {
+					return `
+					<h4>Lorem Ipsum available</h4>
+					<ul class="itemslist">
+					${foods.map(food => `<li>${food}</li>`).join("")}
+					</ul>
+					`;
+				}
+
+				function myTemplate(my) {
+					return `
+					<div class="col-md-12 mb20 products_inner_main">
+						<div class="row">
+							<h2 class="my-name"></h2>
+							<div class="col-md-5 col-sm-6 col-xs-12">
+								<h3 class="text-left mt10 mb10 black">${my.name}</h3>
+								<img src="${my.photo}" classs="image img-responsive">
+							</div>
+							<div class="col-md-7 col-sm-6 col-xs-12">
+								<p class="exphara mt10 text-justify black">${my.pahara ? foods(my.pahara) : ""}</p>
+							</div>
+						</div>
+					</div>
+					`;
+				}
+
+				document.getElementById("app").innerHTML = `
+				${mydata.map(myTemplate).join("")}
+				`;
+
+			</script>
+		</div> 
+	</div>
+	<script type="text/javascript" src="people.json"></script>
+	<script type="text/javascript" >
+		$(document).ready(function (json) {
+			var jsonURL = "people.json";
+			$.getJSON(jsonURL, function (json)
+			{
+				var imgList= "";
+				$.each(json.products, function () {
+					imgList += '<li><img src= "' + this.imgPath + '"></li>';
+				});
+				$('#dvProdList').append(imgList);
+			});
+		});
+	</script>
+	<div id="dvProdList">
+		
+	</div>
+	<!-- //Content Section  -->
+
+	<!-- footer -->
+	<div class="container">	
+		<div class="row">
+			<div class="footer foo-main">
+				<div class="item-1">
+					<article>
+						<ul class="list-group">
+							<li><a href="#">Features</a></li>
+							<li><a href="#">Pricing</a></li>
+							<li><a href="#">FAQs</a></li>
+							<li><a href="#">Blog</a></li>
+							<li><a href="#">Login</a></li>                        
+						</ul>
+					</article>
+				</div>
+				<div class="item-2">
+					<article>
+						<ul class="list-group">
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Leadership</a></li>
+							<li><a href="#">Partners</a></li>                      
+						</ul>
+					</article>
+				</div>
+				<div class="item-3">
+					<article>
+						<ul class="list-group">
+							<li><a href="#">Get Started</a></li>
+							<li><a href="#">Request a Demo</a></li>
+							<li><a href="#">Contact Us</a></li>
+							<li><a href="#">Support</a></li>                       
+						</ul>
+					</article>
+				</div>
+				<div class="item-3">
+					<article>
+						<ul class="list-group">
+							<li><a href="#">Custom Pages</a></li>
+							<li><a href="#">Events &amp; Registration</a></li>
+							<li><a href="#">Peer to Peer Fundraising</a></li>
+							<li><a href="#">Donor Management</a></li>
+							<li><a href="#">Mobile Fundraising</a></li>
+						</ul>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+
+	<!-- js-scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</body>
+</html>

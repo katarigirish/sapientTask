@@ -1,0 +1,17 @@
+{
+ "products": [
+  {
+   "name": "Levis Blue Denim",
+   "imgPath": "placehold.it/700x250.jpg"
+ },
+ {
+   "name": "Pepe Black Jeans",
+   "imgPath": "placehold.it/700x250.jpg"
+ },
+ {
+   "name": "Pepe Blue Jeans",
+   "imgPath": "placehold.it/700x250.jpg"
+ }
+]
+
+}
